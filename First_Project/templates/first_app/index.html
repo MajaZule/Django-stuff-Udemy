@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>First App</title>
+    <title>Picture Page</title>
   </head>
   <body>
 
-    <h1>This is index.html</h1>
-    {{ insert_me }}
+    <h1>One of my AWESOME photos</h1>
+    <img src="{% static "images/IMG_9330.jpg" %}" alt="Where is my picture??">
 
   </body>
 </html>
