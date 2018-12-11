@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Users list</title>
+  </head>
+  <body>
+
+    <h1>List of all users:</h1>
+
+    {% if users %} <!-- if there is a user dict, do sth; if it has the key USERS! -->
+    <ol>
+      {% for person in users %}
+      <li>User Info</li>
+        <ul>
+          <li>First Name: {{ person.first_name }}</li>
+          <li>Last Name: {{ person.last_name }}</li>
+          <li>Email: {{ person.email }}</li>
+        </ul>
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+  </body>
+</html>
