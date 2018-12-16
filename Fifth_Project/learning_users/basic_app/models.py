@@ -9,7 +9,7 @@ class UserProfileInfo(models.Model): # model class to add in additional info tha
 
     #additional
     portfolio_site = models.URLField(blank = True)
-    portfolio_pic = models.ImageField(upload_to = 'profile_pics', blank = True) #profile_pics needs to be subdirectory in MEDIA_DIR
+    profile_pic = models.ImageField(upload_to = 'basic_app/profile_pics', blank = True) #profile_pics needs to be subdirectory in MEDIA_DIR
 
     def __str__(self):
         return self.user.username
