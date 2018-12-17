@@ -28,7 +28,7 @@ SECRET_KEY = 'xt_+ybpx6!$j5h4e6^y1=yrhokj^j%0r6kxuwly!x%%(35im8v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://www.pythonanywhere.com']
+ALLOWED_HOSTS = ['majazule.pythonanywhere.com']
 
 
 # Application definition
