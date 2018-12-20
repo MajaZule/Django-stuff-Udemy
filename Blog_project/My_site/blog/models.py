@@ -9,8 +9,8 @@ class Post(models.Model):
     # we are linkng author to authorised user (superuser)
     title = models.CharField(max_length = 200)
     text = models.TextField()
-    create_date = models.DateTimeField(default= timezone.now())
-    published_date = models.DateTimeField(blank = True, null = True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -18,7 +18,7 @@ class Post(models.Model):
         # with this we define a publish date which we didn't specify at published_date; we count at the time of publish and not at the time of writing
 
     def approve_comments(self):
-        return self.comments.filter(approved_comment = True)
+        return self.comments.filter(approved_comment=True)
 
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={'pk':self.pk})
@@ -39,17 +39,17 @@ class Comment(models.Model):
     # each comment is connected to a blog app post
     author = models.CharField(max_length = 150)
     # author is not the author of the post, is just a john/jane doe typing in their name
-    text = models.TextField
-    create_date = models.DateTimeField(default = timezone.now())
-    approved_comment = models.BooleanField(default = False)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
     # approved comment here should be the same as is the one at approve_comments func
 
     def approve(self):
-        self.approve_comment = True
+        self.approved_comment = True
         self.save()
 
     def get_absolute_url(self):
-        return reverse('post_list')
+        return reverse("post_list")
         # post_list is gonna be the homepage
 
     def __str__(self):
